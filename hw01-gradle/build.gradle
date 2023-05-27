@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+apply plugin: 'java'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+repositories {
+    mavenCentral()
+}
+
+group 'com.github.golovnyakpa'
+version '0.1.0'
+
+def guavaVersion = '31.1-jre'
+dependencies {
+    implementation("com.google.guava:guava:${guavaVersion}")
+}
+
+def mainClass = 'com.github.golovnyakpa.HelloOtus'
+shadowJar {
+    archiveBaseName.set(rootProject.name.concat("_fat-jar"))
+    archiveClassifier.set('')
+    manifest {
+        attributes "Main-Class": mainClass
+    }
+}
+
+tasks.build.dependsOn tasks.shadowJar
