@@ -102,6 +102,10 @@ public class BoxTest {
                 fruitBoxDest.fruitsNum() == 5
         );
         Assertions.assertEquals(5.0, fruitBoxDest.weight(), Utils.doubleOpsPrecision);
+
+        fruitBoxDest.moveContentToOtherBox(fruitBoxDest);
+        Assertions.assertEquals(5, fruitBoxDest.fruitsNum());
+        Assertions.assertEquals(5.0, fruitBoxDest.weight(), Utils.doubleOpsPrecision);
     }
 
 }

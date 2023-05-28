@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Box<T extends Fruit> {
 
-    private final ArrayList<T> fruits;
+    private final List<T> fruits;
 
     public Box(List<? extends T> fruits) {
         this.fruits = new ArrayList<>(fruits);
@@ -34,13 +34,17 @@ public class Box<T extends Fruit> {
     // tbd ideal would be to make:
     // public <A super T> Box<A> moveContentToOtherBox(Box<A> other)
     public void moveContentToOtherBox(Box<? super T> other) {
-        for (T el : this.fruits) {
-            other.addFruit(el);
+        if (this.equals(other)) {
+            System.out.println("Can't move to the same box");
+        } else {
+            for (T el : this.fruits) {
+                other.addFruit(el);
+            }
+            this.fruits.clear();
         }
-        this.fruits.clear();
     }
 
-    public ArrayList<T> getFruits() {
+    public List<T> getFruits() {
         return this.fruits;
     }
 }
