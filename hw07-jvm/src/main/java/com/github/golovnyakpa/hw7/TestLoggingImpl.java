@@ -1,8 +1,10 @@
 package com.github.golovnyakpa.hw7;
 
-import java.util.Arrays;
-
 public class TestLoggingImpl implements TestLoggingInterface {
+
+    public void calculation() {
+        System.out.println("Hello from method without args\n");
+    }
 
     @Log
     @Override
@@ -24,7 +26,6 @@ public class TestLoggingImpl implements TestLoggingInterface {
     @Override
     @Log
     public void calculation(Object... args) {
-        System.out.println(Arrays.toString(args));
         System.out.println("Hello from varargs method\n");
     }
 
