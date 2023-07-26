@@ -64,7 +64,7 @@ public class AtmImpl implements Atm {
         }
     }
 
-    private WithdrawalResult getWithdrawalResult(int requestedAmount, List<Banknote> sortedBanknotes) {
+    private WithdrawalResult getWithdrawalResult(int requestedAmount, @NotNull List<Banknote> sortedBanknotes) {
 
         Map<Banknote, Integer> withdrawalBanknotes = new HashMap<>();
         int remainingAmount = requestedAmount;
@@ -90,7 +90,7 @@ public class AtmImpl implements Atm {
                 .toList();
     }
 
-    private @NotNull Map<Banknote, Integer> countBanknotes(List<Banknote> banknotes) {
+    private @NotNull Map<Banknote, Integer> countBanknotes(@NotNull List<Banknote> banknotes) {
         Map<Banknote, Integer> resultMap = new HashMap<>();
 
         for (Banknote el : banknotes) {
