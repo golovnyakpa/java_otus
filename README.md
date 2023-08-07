@@ -1,2 +1,2 @@
-# java_otus
-Repo for homeworks from java course at otus.ru
+# Java OTUS
+Repo for the homeworks from the java course at otus.ru
