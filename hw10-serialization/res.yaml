@@ -1,0 +1,17 @@
+chats:
+- chatIdentifier: "Apple"
+  last:
+  - "Saint-Petersburg"
+  membersMessages:
+  - number: "+79215553267"
+    messages:
+    - sendDate: 1680263614000
+      text: "PROBLEM WARNING - No more free space on the disc"
+    - sendDate: 1680264555000
+      text: "PROBLEM CRITICAL - The weather is not good for today"
+  - number: "+79219213267"
+    messages:
+    - sendDate: 1680260959000
+      text: "PROBLEM CRITICAL - There is hight price of the order"
+    - sendDate: 1680267208000
+      text: "PROBLEM WARNING - It's raining like dogs and cats"
