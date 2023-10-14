@@ -4,16 +4,15 @@ import com.github.golovnyakpa.hw20.conf.Conf;
 
 import java.io.*;
 import java.net.Socket;
-import java.time.LocalDateTime;
 import java.util.concurrent.Executors;
 
 public class Client {
     public static void main(String[] args) {
-        System.out.println("Start time: " + LocalDateTime.now());
         var threadPool = Executors.newFixedThreadPool(4);
-        threadPool.submit(sendSocketRequest("/tolstoy"));
-        threadPool.submit(sendSocketRequest("/wilde"));
-        threadPool.submit(sendSocketRequest("/pushkin"));
+        threadPool.submit(sendSocketRequest("GET /tolstoy HTTP/1.1"));
+        threadPool.submit(sendSocketRequest("GET /wilde HTTP/1.1"));
+        threadPool.submit(sendSocketRequest("GET /pushkin HTTP/1.1"));
+        threadPool.submit(sendSocketRequest("PUT /pushkin HTTP/1.1"));
         threadPool.shutdown();
     }
 
@@ -36,7 +35,6 @@ public class Client {
                 while (!(line = br.readLine()).equals(Conf.EOF)) {
                     System.out.println(line);
                 }
-                System.out.println(LocalDateTime.now() + ": Got response");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
