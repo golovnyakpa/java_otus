@@ -1,4 +1,7 @@
 include 'hw04-annnotations'
+include 'hw05-annotation_processor'
+include 'hw05-my_annotation_usage'
 include 'hw07-jvm'
 include 'hw08-atm'
+include 'hw07-jvm:hw05-my_processor_usage'
 
